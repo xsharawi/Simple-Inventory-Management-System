@@ -11,12 +11,13 @@ namespace Managment
             Inventory myInverntory = new Inventory();
 
             Console.WriteLine("Product name?");
-            String? nameinput = Console.ReadLine();
+            String nameinput = Console.ReadLine();
+
             Console.WriteLine("Product price?");
-            int? price = Convert.ToInt32(Console.ReadLine());
+            int price = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Product quantity?");
-            int? quantity = Convert.ToInt32(Console.ReadLine());
+            int quantity = Convert.ToInt32(Console.ReadLine());
 
             Product myProd = new Product();
             Product myProd2 = new Product();
@@ -40,6 +41,20 @@ namespace Managment
 
             Console.WriteLine("");
             Console.WriteLine(inventoryoutput);
+
+            Console.WriteLine("Searchable name?");
+            String? searchable = Console.ReadLine();
+
+            (bool, Product) myTup = myInverntory.found(searchable);
+            if (myTup.Item1)
+            {
+                Console.WriteLine(myTup.Item2.ToString());
+            }
+            else
+            {
+                Console.WriteLine("item not found");
+            }
+
 
 
         }

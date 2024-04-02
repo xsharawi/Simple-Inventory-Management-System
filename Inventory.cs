@@ -31,6 +31,20 @@ namespace NInventory
             return ans;
         }
 
+        public (bool, Product?) found(string target)
+        {
+            if (this.mylist == null) throw new Exception("List not made");
+            foreach (Product a in this.mylist)
+            {
+                if (a.Name == target)
+                {
+                    return (true, a);
+                }
+            }
+            return (false, null);
+        }
+
+
 
     }
 }
