@@ -11,6 +11,7 @@ namespace Managment
             Inventory myInverntory = new Inventory();
             while (choice != 6)
             {
+                Console.Clear();
                 Console.WriteLine("1) Add a product");
                 Console.WriteLine("2) View all products");
                 Console.WriteLine("3) Edit a product");
@@ -44,6 +45,9 @@ namespace Managment
                 {
                     var inventoryoutput = myInverntory.ToString();
                     Console.WriteLine(inventoryoutput);
+                }
+                else if (choice == 3)
+                {
                 }
                 else if (choice == 4)
                 {
