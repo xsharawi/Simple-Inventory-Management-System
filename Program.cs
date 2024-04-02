@@ -43,7 +43,7 @@ namespace Managment
             Console.WriteLine(inventoryoutput);
 
             Console.WriteLine("Searchable name?");
-            String? searchable = Console.ReadLine();
+            String searchable = Console.ReadLine();
 
             (bool, Product) myTup = myInverntory.found(searchable);
             if (myTup.Item1)
@@ -54,6 +54,17 @@ namespace Managment
             {
                 Console.WriteLine("item not found");
             }
+
+            Console.WriteLine("delete name?");
+            String del = Console.ReadLine();
+
+
+            myInverntory.delete(del);
+
+            inventoryoutput = myInverntory.ToString();
+
+            Console.WriteLine("");
+            Console.WriteLine(inventoryoutput);
 
 
 

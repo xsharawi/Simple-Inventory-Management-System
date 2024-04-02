@@ -31,6 +31,15 @@ namespace NInventory
             return ans;
         }
 
+        public void delete(string target)
+        {
+            if (this.mylist == null) throw new Exception("List not made");
+
+            this.mylist.RemoveAll((Product p) => { return p.Name == target; });
+        }
+
+
+
         public (bool, Product?) found(string target)
         {
             if (this.mylist == null) throw new Exception("List not made");
