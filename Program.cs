@@ -19,14 +19,28 @@ namespace Managment
             int? quantity = Convert.ToInt32(Console.ReadLine());
 
             Product myProd = new Product();
+            Product myProd2 = new Product();
 
             myProd.Name = nameinput;
             myProd.Price = (int)price;
             myProd.Quantity = (int)quantity;
 
+            myProd2.Name = nameinput;
+            myProd2.Price = (int)price;
+            myProd2.Quantity = (int)quantity;
+
+
             var output = myProd.ToString();
             Console.WriteLine(output);
+
             myInverntory.addToList(myProd);
+            myInverntory.addToList(myProd2);
+
+            var inventoryoutput = myInverntory.ToString();
+
+            Console.WriteLine("");
+            Console.WriteLine(inventoryoutput);
+
 
         }
     }
