@@ -27,6 +27,10 @@ namespace NProduct
         }
 
 
+        public override string ToString()
+        {
+            return $"Product name: {Name}, Product price: {Price}, Product quantity: {Quantity}";
+        }
 
     }
 }
