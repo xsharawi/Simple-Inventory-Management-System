@@ -7,9 +7,14 @@ namespace Managment
     {
         static void Main(string[] args)
         {
-            Product a = new Product();
-            a.Name = "hi";
-            Console.WriteLine(a.Name);
+
+            Inventory myInverntory = new Inventory();
+            String? nameinput = Console.ReadLine();
+            int? price = Convert.ToInt32(Console.ReadLine());
+            int? quality = Convert.ToInt32(Console.ReadLine());
+            Product myProd = new Product();
+
+
         }
     }
 }
