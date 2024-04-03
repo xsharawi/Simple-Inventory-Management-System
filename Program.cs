@@ -7,10 +7,11 @@ namespace Managment
     {
         static void Main(string[] args)
         {
-            int choice = 9;
+            int choice = 0;
             Inventory myInverntory = new Inventory();
             while (choice != 6)
             {
+
                 Console.Clear();
                 Console.WriteLine("1) Add a product");
                 Console.WriteLine("2) View all products");
@@ -43,11 +44,66 @@ namespace Managment
                 }
                 else if (choice == 2)
                 {
+
                     var inventoryoutput = myInverntory.ToString();
                     Console.WriteLine(inventoryoutput);
+
                 }
                 else if (choice == 3)
                 {
+                    var inventoryoutput = myInverntory.ToString();
+                    Console.WriteLine(inventoryoutput);
+
+                    Console.WriteLine("Type the name of the product you want to change: ");
+                    String edit = Console.ReadLine();
+
+                    (bool, Product) myTup = myInverntory.found(edit);
+                    if (myTup.Item1)
+                    {
+                        int choice2 = 0;
+                        while (choice2 != 4)
+                        {
+                            Console.WriteLine("Which do you want to update");
+                            Console.WriteLine("1) Product name");
+                            Console.WriteLine("2) Product price");
+                            Console.WriteLine("3) Product quantity");
+                            Console.WriteLine("4) Done editing");
+                            Console.WriteLine("Which choice do you want?");
+                            choice2 = Convert.ToInt32(Console.ReadLine());
+
+                            if (choice2 == 1)
+                            {
+                                Console.WriteLine("Enter the new name:");
+                                String newName = Console.ReadLine();
+                                myInverntory.editName(myTup.Item2, newName);
+
+                            }
+                            else if (choice2 == 2)
+                            {
+                                Console.WriteLine("Enter the new price");
+                                int newPrice = Convert.ToInt32(Console.ReadLine());
+                                myInverntory.editPrice(myTup.Item2, newPrice);
+
+                            }
+                            else if (choice2 == 3)
+                            {
+                                Console.WriteLine("Enter the new quantity");
+                                int newQuantity = Convert.ToInt32(Console.ReadLine());
+                                myInverntory.editQuantity(myTup.Item2, newQuantity);
+
+                            }
+                        }
+
+
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("item not found");
+                    }
+
+
+
                 }
                 else if (choice == 4)
                 {
@@ -59,6 +115,7 @@ namespace Managment
                 }
                 else if (choice == 5)
                 {
+
                     Console.WriteLine("Search name?");
                     String searchable = Console.ReadLine();
                     (bool, Product) myTup = myInverntory.found(searchable);
@@ -71,6 +128,18 @@ namespace Managment
                         Console.WriteLine("item not found");
                     }
 
+
+                }
+
+                if (choice != 6)
+                {
+                    Console.WriteLine("press any key to continue");
+                    Console.Read();
+                }
+
+                if (choice == 6)
+                {
+                    Console.WriteLine("Thanks for using my little cli application");
                 }
 
 

@@ -53,6 +53,21 @@ namespace NInventory
             return (false, null);
         }
 
+        public void editQuantity(Product a, int quantity)
+        {
+            a.Quantity = quantity;
+        }
+
+        public void editPrice(Product a, int price)
+        {
+            a.Price = price;
+        }
+
+        public void editName(Product a, string name)
+        {
+            a.Name = name;
+        }
+
 
 
     }
