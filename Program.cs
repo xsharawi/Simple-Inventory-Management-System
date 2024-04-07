@@ -45,7 +45,7 @@ namespace Managment
                 else if (choice == 2)
                 {
 
-                    var inventoryoutput = myInverntory.ToString();
+                    var inventoryoutput = myInverntory.ToString(); // NIT: Naming convention inventoryOutput
                     Console.WriteLine(inventoryoutput);
 
                 }
