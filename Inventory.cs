@@ -1,28 +1,24 @@
-using NProduct;
-
-namespace NInventory
+namespace excercise1
 {
     public class Inventory
     {
-        private List<Product>? mylist;
+        private List<Product> _products;
 
         public Inventory()
         {
-            mylist = new List<Product>();
+            _products = new List<Product>();
         }
 
         public void addToList(Product a)
         {
-            if (this.mylist == null) throw new Exception("List not made");
 
-            this.mylist.Add(a);
+            this._products.Add(a);
         }
 
         public override string ToString()
         {
-            if (this.mylist == null) throw new Exception("List not made");
             string ans = "";
-            foreach (Product a in this.mylist)
+            foreach (Product a in this._products)
             {
                 ans += (a.ToString());
                 ans += "\n";
@@ -33,17 +29,15 @@ namespace NInventory
 
         public void delete(string target)
         {
-            if (this.mylist == null) throw new Exception("List not made");
 
-            this.mylist.RemoveAll((Product p) => { return p.Name == target; });
+            this._products.RemoveAll(p => p.Name == target);
         }
 
 
 
-        public (bool, Product?) found(string target)
+        public (bool, Product?) Find(string target)
         {
-            if (this.mylist == null) throw new Exception("List not made");
-            foreach (Product a in this.mylist)
+            foreach (Product a in this._products)
             {
                 if (a.Name == target)
                 {

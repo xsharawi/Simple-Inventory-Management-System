@@ -1,15 +1,9 @@
 
-namespace NProduct
+namespace excercise1
 {
     public class Product
     {
-
-        private string name = String.Empty;
-        public string Name
-        {
-            set { this.name = value; }
-            get { return this.name; }
-        }
+        public string Name { set; get; } = String.Empty;
 
         private int price = 0;
         public int Price
